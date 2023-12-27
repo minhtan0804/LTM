@@ -1,0 +1,20 @@
+package com.mycompany.mavenproject10;
+
+import aaa.NumberService;
+import aaa.NumberService_Service;
+
+/**
+ *
+ * @author trant
+ */
+public class Mavenproject10 {
+    public static void main(String[] args) {
+        NumberService_Service service = new NumberService_Service();
+        NumberService port = service.getNumberServicePort();
+        String rs = port.getNumber("B20DCCN602");
+        System.out.println(rs);
+        
+        String kq = "jhd";
+        port.greatNumber(kq, kq);
+    }
+}

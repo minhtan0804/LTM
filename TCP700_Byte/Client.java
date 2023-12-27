@@ -18,16 +18,16 @@ public class Client {
     System.out.println("Send message: " + sendMessage);
     outputStream.write(sendMessage.getBytes());
     // outputStream.flush();
-    
+
     byte[] buf = new byte[1024];
     int byteReceive = inputStream.read(buf);
     String receiveMessage = new String(buf, 0, byteReceive);
     System.out.println("Receive message: " + receiveMessage);
 
-    String[] messages = receiveMessage.split("|");
+    String[] messages = receiveMessage.split("\\|");
     int firstValue = Integer.parseInt(messages[0]);
-    int secondValue = Integer.parseInt(messages[0]);
-    
+    int secondValue = Integer.parseInt(messages[1]);
+
     sendMessage = String.valueOf(firstValue + secondValue);
     System.out.println("Send message: " + sendMessage);
     outputStream.write(sendMessage.getBytes());

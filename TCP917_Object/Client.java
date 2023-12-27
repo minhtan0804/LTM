@@ -12,12 +12,12 @@ public class Client {
     Socket socket = new Socket(host, port);
 
     ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
-
+    
     System.out.println("Sending...");
     String codeSend = "B20DCCN757;917";
     oos.writeObject(codeSend);
     System.out.println("Send code success...");
-
+    
     ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
     Product product = (Product) ois.readObject();
 
